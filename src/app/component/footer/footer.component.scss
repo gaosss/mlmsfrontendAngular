@@ -1,0 +1,34 @@
+
+.app-header {
+  // background: #fff;
+  // background: #c1cedb;
+  border-bottom: 1px solid #c1cedb;
+  padding: 15px 0;
+  text-align: center;
+  img {
+    display: inline-block;
+  }
+
+  &__user-info {
+    position: absolute;
+    top: 16px;
+    right: 0;
+    cursor: pointer;
+  }
+
+  span {
+    //background: url(logout.svg) no-repeat;
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+    display: block;
+    padding: 0 0 0 5px;
+    opacity: 0.4;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+
+
+}

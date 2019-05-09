@@ -1,0 +1,39 @@
+{
+  "playlist": [
+    {
+      "id": 3,
+      "singer": "Blink-182",
+      "name": "All The Small Things",
+      "listened": true,
+      "favor": true
+    },
+    {
+      "id": 6,
+      "singer": "Sia",
+      "name": "Cheap Thrills",
+      "listened": true,
+      "favor": true
+    },
+    {
+      "id": 7,
+      "singer": "Birdy",
+      "name": "Wild Horses",
+      "listened": true,
+      "favor": true
+    },
+    {
+      "id": 8,
+      "singer": "Stereophonics",
+      "name": "Local Boy In The Photograph",
+      "listened": false,
+      "favor": true
+    },
+    {
+      "listened": false,
+      "favor": true,
+      "singer": "dog",
+      "name": "good",
+      "id": 9
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+.songs-list {
+  background: #fff;
+  box-shadow: 0 16px 24px 0 rgba(0,0,0,.1);
+  border-radius: 4px;
+  overflow: hidden;
+  h3 {
+    background: #552075;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  &__favourite {
+    width: 22px;
+    height: 20px;
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    background: url(favourite.svg) no-repeat 0 0;
+    background-size: 20px 20px;
+    cursor: pointer;
+    &.active {
+      background: url(favourite-active.svg) no-repeat 0 0;
+      background-size: 20px 20px;
+    }
+  }
+  &__listened {
+    width: 22px;
+    height: 20px;
+    position: absolute;
+    top: 30px;
+    right: 70px;
+    cursor: pointer;
+    background: url(played.svg) no-repeat 0 0;
+    background-size: 20px 20px;
+    &.active {
+      background: url(played-active.svg) no-repeat 0 0;
+      background-size: 20px 20px;
+    }
+  }
+  &__trash {
+    width: 22px;
+    height: 20px;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    cursor: pointer;
+    background: url(remove.svg) no-repeat 0 0;
+    background-size: 20px 20px;
+    &.active {
+      background: url(remove.svg) no-repeat 0 0;
+      background-size: 20px 20px;
+    }
+  }
+
+  &__delHint {
+    display: flex;
+    align-items: center;
+    margin: 0 10px 0 0;
+    width: 180px;
+    height: 40px;
+    background-color: #d73a49;
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    //cursor: pointer;
+    //background: url(remove.svg) no-repeat 0 0;
+    // background-size: 20px 20px;
+    //&.active {
+    // background: url(remove.svg) no-repeat 0 0;
+    //background-size: 20px 20px;
+    //}
+  }
+
+  &__confirm {
+
+    //background-color: ;
+    //background: #d73a49;
+    padding: 5px 10px;
+    margin: 0 0 0 5px;
+    font-size: 14px;
+    border-radius: 3px;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      background: darken(#d73a49, 15%);
+    }
+  }
+
+  &__cancel {
+    // @extend %button;
+
+    padding: 5px 10px;
+    margin: 0 0 0 5px;
+    font-size: 14px;
+  }
+
+  li {
+    position: relative;
+    padding: 10px 20px;
+    &:nth-child(2n) {
+      background: #f5f4f5;
+    }
+    p {
+      font: {
+        size: 16px;
+        margin: 0;
+        weight: 500;
+      }
+    }
+    span {
+      color: #807d82;
+    }
+  }
+
+
+}
+

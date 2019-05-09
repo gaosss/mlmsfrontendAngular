@@ -1,0 +1,38 @@
+
+
+<div class="body">
+  <!--<ng-content></ng-content>-->
+  <form  [formGroup]="formGroup" (ngSubmit)="update()">
+    <p>
+      <label >Song Name: </label>
+      <mat-form-field class="mat-form-field">
+
+        <input  matInput type="text"  formControlName="name">
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-checkbox  formControlName="listened">Listened</mat-checkbox>
+      <mat-checkbox  formControlName="favor">Favourite</mat-checkbox>
+    </p>
+
+    <p>
+      <label >Artist:  </label>
+      <mat-form-field >
+        <input matInput type="text" formControlName="singer" >
+
+
+      </mat-form-field>
+    </p>
+    <p>
+      <button  type="submit" >
+        <img src="assets/img/images_addsmall.jpg" width="120" height="30">
+
+      </button>
+    </p>
+
+
+  </form>
+
+</div>
+

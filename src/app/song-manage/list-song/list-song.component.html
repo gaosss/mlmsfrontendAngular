@@ -1,0 +1,41 @@
+
+<div class="songs-list">
+
+  <h3>
+    <ng-content>
+
+    </ng-content>
+  </h3>
+  <ul>
+    <li *ngFor="let item of songs; let i = index">
+
+      <!--<a [routerLink]="getRoute(item)">-->
+      <div *ngIf="disType==='playlist' || (disType==='favourite' && item.favor) ||(disType==='listened'&& item.listened) ">
+
+        <!--<a [routerLink]="getRoute(item)">-->
+        <a>
+        <p>{{item.singer}}</p>
+        <span>{{item.name}}</span>
+        </a>
+
+        <div class="songs-list__favourite" [class.active]=item.favor (click)="clickFavor(i)">
+        </div>
+        <div class="songs-list__listened" [class.active]=item.listened (click)="clickListen(i)">
+        </div>
+
+        <div *ngIf="del[i]" class="songs-list__delHint">
+          <p>delete item?</p>
+          <button class="songs-list__confirm" type="button" (click)="removeItem(i)">Yes</button>
+          <button class="songs-list__cancel" type="button" (click)="onClickNo(i)">No</button>
+        </div>
+        <div class="songs-list__trash" (click)="onTrachClick(i)">
+        </div>
+
+      </div>
+
+
+    </li>
+
+  </ul>
+
+</div>
