@@ -6,14 +6,14 @@ import { SongDisplayComponent } from './song-display/song-display.component';
 import { SongListForEditComponent } from './song-list-for-edit/song-list-for-edit.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule} from '@angular/material';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { DemoComponent } from './demo/demo.component';
+import { SongUpdateComponent } from './song-update/song-update.component';
 const ROUTES: Routes = [
  {path: '', component: SongDisplayComponent},
   ];
 
 @NgModule({
-  declarations: [ ListSongComponent,   SongDisplayComponent, SongListForEditComponent, DemoComponent],
+  declarations: [ ListSongComponent,   SongDisplayComponent, SongListForEditComponent, DemoComponent, SongUpdateComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

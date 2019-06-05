@@ -1,0 +1,18 @@
+<h4>
+  Song Update
+</h4>
+
+<div *ngIf="song$|async; else loading">
+
+  <app-song-list-for-edit  [song] = "song$|async" (songUpdate)="updateSong($event)">
+    Update Song
+  </app-song-list-for-edit>
+
+</div>
+
+
+<ng-template #loading>
+
+  Fetching Song...
+
+</ng-template>

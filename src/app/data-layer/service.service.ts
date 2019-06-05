@@ -24,11 +24,15 @@ export interface Song {
   })
   export class ServiceService {
 
-  serverUrl = 'http://localhost:3000/playlist';
-  javaServerUrlForGet = 'http://localhost:7788/api/allSongs';
-  javaServerUrlForUpdate = 'http://localhost:7788/api/update';
-  javaServerUrlForDelete = 'http://localhost:7788/api/songs';
-  javaServerUrlForAdd = 'http://localhost:7788/api/new';
+  serverUrl = 'http://18.222.203.72:3000/playlist';
+  javaServerUrlForGet = 'http://18.222.203.72:7788/api/allSongs';
+ // javaServerUrlForGet = 'http://localhost:7799/api/allSongs';
+  javaServerUrlForUpdate = 'http://18.222.203.72:7788/api/update';
+  //javaServerUrlForUpdate = 'http://localhost:7799/api/update';
+
+  javaServerUrlForDelete = 'http://18.222.203.72:7788/api/songs';
+  javaServerUrlForAdd = 'http://18.222.203.72:7788/api/new';
+  //javaServerUrlForAdd = 'http://localhost:7799/api/new';
   getPlayList$: Observable<any>;
   songs: Song[];
 
@@ -42,7 +46,7 @@ export interface Song {
 
 
   getUpdateUrl(song: Song): string {
-
+    console.log("song id is " + song.id)
    return this.javaServerUrlForUpdate + '/' + song.id + '?name=' + song.name + '&singer='
       + song.singer + '&favor=' + song.favor + '&listened=' + song.listened;
   }

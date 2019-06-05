@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Song} from '../../data-layer/service.service';
+import {ServiceService, Song} from '../../data-layer/service.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit , OnDestroy {
 
   editFormIndicator: boolean;
 
-  constructor() {
+  constructor(private servive: ServiceService) {
 
     this.editFormIndicator = false;
 
@@ -36,5 +36,6 @@ export class HeaderComponent implements OnInit , OnDestroy {
 
   onEvent(song: Song) {
     this.editFormIndicator = ! this.editFormIndicator;
+    this.servive.addSong(song);
   }
 }

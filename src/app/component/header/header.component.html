@@ -7,7 +7,7 @@
     <img src="assets/img/add.svg.png" width="180" alt="">
     </button>
 
-    <app-song-list-for-edit (songUpdate)="onEvent(song)" *ngIf="editFormIndicator"></app-song-list-for-edit>
+    <app-song-list-for-edit (songUpdate)="onEvent($event)" *ngIf="editFormIndicator"></app-song-list-for-edit>
 
   </div>
 
