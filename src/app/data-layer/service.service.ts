@@ -24,15 +24,10 @@ export interface Song {
   })
   export class ServiceService {
 
-  serverUrl = 'http://18.222.203.72:3000/playlist';
-  javaServerUrlForGet = 'http://18.222.203.72:7788/api/allSongs';
- // javaServerUrlForGet = 'http://localhost:7799/api/allSongs';
-  javaServerUrlForUpdate = 'http://18.222.203.72:7788/api/update';
-  //javaServerUrlForUpdate = 'http://localhost:7799/api/update';
-
-  javaServerUrlForDelete = 'http://18.222.203.72:7788/api/songs';
-  javaServerUrlForAdd = 'http://18.222.203.72:7788/api/new';
-  //javaServerUrlForAdd = 'http://localhost:7799/api/new';
+  javaServerUrlForGet = '//ec2-18-224-23-94.us-east-2.compute.amazonaws.com:7788/api/allSongs';
+  javaServerUrlForUpdate = '//ec2-18-224-23-94.us-east-2.compute.amazonaws.com:7788/api/update';
+  javaServerUrlForDelete = '//ec2-18-224-23-94.us-east-2.compute.amazonaws.com:7788/api/songs';
+  javaServerUrlForAdd = '//ec2-18-224-23-94.us-east-2.compute.amazonaws.com:7788/api/new';
   getPlayList$: Observable<any>;
   songs: Song[];
 

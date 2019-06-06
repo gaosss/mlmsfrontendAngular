@@ -3,7 +3,7 @@ import {ServiceService, Song} from '../../data-layer/service.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {Store} from '../../store';
 import {Subscription} from 'rxjs';
-import {Router} from '@angular/router';
+import {Router, Routes} from '@angular/router';
 
 @Component({
   selector: 'app-song-list-for-edit',
@@ -19,6 +19,7 @@ export class SongListForEditComponent implements OnInit , OnChanges{
   mySong: Song;
   constructor(private formBuilder: FormBuilder,
               private service: ServiceService,
+              private router: Router,
               ) {
     this.songUpdate = new EventEmitter();
     this.formBody = {
@@ -59,5 +60,9 @@ export class SongListForEditComponent implements OnInit , OnChanges{
     console.log('on change');
     this.formGroup.patchValue(value);
 
+  }
+
+  cancel() {
+    this.router.navigate(['/']);
   }
 }

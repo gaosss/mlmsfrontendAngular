@@ -2,13 +2,21 @@
 .app-header {
  // background: #fff;
  // background: #c1cedb;
+  justify-content: space-around;
+  display: flex;
   border-bottom: 1px solid #c1cedb;
   padding: 15px 0;
   text-align: center;
   img {
     display: inline-block;
   }
-
+  &__mydiv{
+    text-align: left;
+    width: 500px;
+  }
+  &__button {
+    width: 200px;
+      }
   &__user-info {
     position: absolute;
     top: 16px;
