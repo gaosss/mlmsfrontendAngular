@@ -21,7 +21,7 @@ this.del = [];
   }
 
   ngOnInit() {
-
+    console.log("list-song on init")
     this.subscription = this.service.getPlayList$.subscribe();
 
     this.store.select('playlist').subscribe(nnn => {
@@ -32,7 +32,10 @@ this.del = [];
   }
 
   ngOnDestroy(): void {
+    console.log("list-song on destroy")
+    this.subscription.unsubscribe();
   }
+
 
   getRoute(item: Song) {
     return [`/` + item.id];
@@ -81,4 +84,11 @@ this.del = [];
     }
     return song;
   }
+
+
+
+
+
+
+
 }

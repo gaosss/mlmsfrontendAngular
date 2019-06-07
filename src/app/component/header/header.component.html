@@ -1,13 +1,21 @@
-
-
 <div class="app-header">
+  <div class="app-header__mydiv">
+    <h1>This project is a interview demo for full stack or front end/back end developer position.</h1>
+    <br>
+    Skill set involved is as below: <br>
+    1. Front end: : Angular7, JavaScript, TypeScript, CSS, HTML5, SCSS, WebPack, jQuery, Redux, RESTful, JSON.
+    <br>
+    2. Back end: Restful API, Java, SpringBoot, MySQL.
+    <br>
+    3. Front end is published on AWS S3; API is running on AWS EC2 ubuntu server; Database is AWS RDS.
 
+  </div>
 
-    <button (click)="onAddClick()">
+    <button class="app-header__button" (click)="onAddClick()">
     <img src="assets/img/add.svg.png" width="180" alt="">
     </button>
 
-    <app-song-list-for-edit (songUpdate)="onEvent(song)" *ngIf="editFormIndicator"></app-song-list-for-edit>
+    <app-song-list-for-edit (songUpdate)="onEvent($event)" *ngIf="editFormIndicator"></app-song-list-for-edit>
 
   </div>
 
