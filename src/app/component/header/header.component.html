@@ -1,11 +1,15 @@
 <div class="app-header">
   <div class="app-header__mydiv">
-    <h1>This project is a interview demo for full stack or front end/back end developer position.</h1>
+    <h1 >This project is a interview demo for full stack or front end/back end developer position.</h1>
     <br>
     Skill set involved is as below: <br>
     1. Front end: : Angular7, JavaScript, TypeScript, CSS, HTML5, SCSS, WebPack, jQuery, Redux, RESTful, JSON.
     <br>
+    Front end code is available at : <a href="https://github.com/gaosss/mlmsfrontendAngular" target="_blank">https://github.com/gaosss/mlmsfrontendAngular</a>
+    <br>
     2. Back end: Restful API, Java, SpringBoot, MySQL.
+    <br>
+    Back end java code is available at <a href="https://github.com/gaosss/mlmsBackendJavaSpringboot" target="_blank">https://github.com/gaosss/mlmsBackendJavaSpringboot</a>
     <br>
     3. Front end is published on AWS S3; API is running on AWS EC2 ubuntu server; Database is AWS RDS.
 
@@ -15,7 +19,7 @@
     <img src="assets/img/add.svg.png" width="180" alt="">
     </button>
 
-    <app-song-list-for-edit (songUpdate)="onEvent($event)" *ngIf="editFormIndicator"></app-song-list-for-edit>
+    <app-song-list-for-edit (indicator)="editFormIndicator=$event" (songUpdate)="onEvent($event)" *ngIf="editFormIndicator"></app-song-list-for-edit>
 
   </div>
 

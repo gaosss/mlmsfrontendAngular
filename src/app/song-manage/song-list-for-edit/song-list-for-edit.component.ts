@@ -1,9 +1,7 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {ServiceService, Song} from '../../data-layer/service.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {Store} from '../../store';
-import {Subscription} from 'rxjs';
-import {Router, Routes} from '@angular/router';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-song-list-for-edit',
@@ -14,6 +12,7 @@ export class SongListForEditComponent implements OnInit , OnChanges{
 
   @Input() song: Song;
   @Output() songUpdate: EventEmitter<Song>;
+  @Output() indicator: EventEmitter<boolean>;
   formGroup: FormGroup;
   formBody: Object;
   mySong: Song;
@@ -22,6 +21,7 @@ export class SongListForEditComponent implements OnInit , OnChanges{
               private router: Router,
               ) {
     this.songUpdate = new EventEmitter();
+    this.indicator = new EventEmitter();
     this.formBody = {
       name: '',
       listened: false,
@@ -41,16 +41,17 @@ export class SongListForEditComponent implements OnInit , OnChanges{
   }
 
   update() {
-    console.log("add is trippger");
-    this.mySong = this.formGroup.value;
-    console.log("this.mysong name = " + this.mySong.name);
-    //console.log("this.mySong.name =" + this.mySong.name);
-    //if (this.song === undefined && this.mySong.name !== '') {
-      //this.service.addSong(this.mySong);
-    console.log("this.songUpdate is emit");
-    this.songUpdate.emit(this.mySong);
 
-   //}
+      this.mySong = this.formGroup.value;
+      if (this.mySong.name !== '') {
+      console.log("########this.mysong name = " + this.mySong.name);
+
+      console.log("this.songUpdate is emit");
+      this.songUpdate.emit(this.mySong);
+
+    } else {
+        this.indicator.emit(false);
+      }
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -62,7 +63,5 @@ export class SongListForEditComponent implements OnInit , OnChanges{
 
   }
 
-  cancel() {
-    this.router.navigate(['/']);
-  }
+
 }
