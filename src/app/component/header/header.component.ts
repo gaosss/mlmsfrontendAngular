@@ -35,7 +35,12 @@ export class HeaderComponent implements OnInit , OnDestroy {
   }
 
   onEvent(song: Song) {
-    this.editFormIndicator = ! this.editFormIndicator;
-    this.servive.addSong(song);
+    //if (song.name && song.singer && song.listened && song.favor) {
+
+      this.editFormIndicator = !this.editFormIndicator;
+      console.log('addsong is triggered and song name is' + song.name);
+      this.servive.addSong(song);
+    // }
+    // else {alert('please input all the info needed.')}
   }
 }

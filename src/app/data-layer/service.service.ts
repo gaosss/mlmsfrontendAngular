@@ -24,10 +24,16 @@ export interface Song {
   })
   export class ServiceService {
 
-  javaServerUrlForGet = '//ec2-18-224-23-94.us-east-2.compute.amazonaws.com:7788/api/allSongs';
-  javaServerUrlForUpdate = '//ec2-18-224-23-94.us-east-2.compute.amazonaws.com:7788/api/update';
-  javaServerUrlForDelete = '//ec2-18-224-23-94.us-east-2.compute.amazonaws.com:7788/api/songs';
-  javaServerUrlForAdd = '//ec2-18-224-23-94.us-east-2.compute.amazonaws.com:7788/api/new';
+  //javaServerUrlForGet = '//ec2-18-208-180-155.compute-1.amazonaws.com:7788/api/allSongs';
+  //  javaServerUrlForUpdate = '//ec2-18-208-180-155.compute-1.amazonaws.com:7788/api/update';
+  // javaServerUrlForDelete = '//ec2-18-208-180-155.compute-1.amazonaws.com:7788/api/songs';
+  // javaServerUrlForAdd = '//ec2-18-208-180-155.compute-1.amazonaws.com:7788/api/new';
+
+  javaServerUrlForGet = '//localhost:7788/api/allSongs';
+  javaServerUrlForUpdate = '//localhost:7788/api/update';
+  javaServerUrlForDelete = '//localhost:7788/api/songs';
+  javaServerUrlForAdd = '//localhost:7788/api/new';
+
   getPlayList$: Observable<any>;
   songs: Song[];
 
@@ -57,6 +63,8 @@ export interface Song {
       this.store.set('playlist', next);
       console.log('2   next=' + next);
     }));
+
+
   }
   updateSong(song: Song) {
     this.http.put(this.getUpdateUrl(song), null).subscribe();
@@ -68,12 +76,14 @@ export interface Song {
   }
 
   addSong(song: Song) {
+    //console.log('addsong2 is triggered and song name is ' + song.name)
     this.store.select('playlist').subscribe(next => {
       this.songs = next as Song[];
+      //console.log('the songs = ' + this.songs);
     });
-    console.log("song [] name ="+ this.songs[0].name);
-    console.log('add url = ' + this.getAddUrl(song));
-    console.log('new song id = ' + song.id + "    song name = " + song.name);
+    //console.log("song [] name ="+ this.songs[0].name);
+    //console.log('add url = ' + this.getAddUrl(song));
+    //console.log('new song id = ' + song.id + "    song name = " + song.name);
 
     this.http.post(this.getAddUrl(song), null).subscribe(value => {
       console.log('post sucessful vaule =  ' + value);

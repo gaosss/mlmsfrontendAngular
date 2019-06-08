@@ -16,9 +16,7 @@ export class SongListForEditComponent implements OnInit , OnChanges{
   formGroup: FormGroup;
   formBody: Object;
   mySong: Song;
-  constructor(private formBuilder: FormBuilder,
-              private service: ServiceService,
-              private router: Router,
+  constructor(private formBuilder: FormBuilder
               ) {
     this.songUpdate = new EventEmitter();
     this.indicator = new EventEmitter();
@@ -43,6 +41,8 @@ export class SongListForEditComponent implements OnInit , OnChanges{
   update() {
 
       this.mySong = this.formGroup.value;
+
+
       if (this.mySong.name !== '') {
       console.log("########this.mysong name = " + this.mySong.name);
 
