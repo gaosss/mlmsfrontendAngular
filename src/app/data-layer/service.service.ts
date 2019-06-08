@@ -24,15 +24,15 @@ export interface Song {
   })
   export class ServiceService {
 
-  //javaServerUrlForGet = '//ec2-18-208-180-155.compute-1.amazonaws.com:7788/api/allSongs';
-  //  javaServerUrlForUpdate = '//ec2-18-208-180-155.compute-1.amazonaws.com:7788/api/update';
-  // javaServerUrlForDelete = '//ec2-18-208-180-155.compute-1.amazonaws.com:7788/api/songs';
-  // javaServerUrlForAdd = '//ec2-18-208-180-155.compute-1.amazonaws.com:7788/api/new';
+  javaServerUrlForGet = '//ec2-18-208-180-155.compute-1.amazonaws.com:7788/api/allSongs';
+   javaServerUrlForUpdate = '//ec2-18-208-180-155.compute-1.amazonaws.com:7788/api/update';
+  javaServerUrlForDelete = '//ec2-18-208-180-155.compute-1.amazonaws.com:7788/api/songs';
+  javaServerUrlForAdd = '//ec2-18-208-180-155.compute-1.amazonaws.com:7788/api/new';
 
-  javaServerUrlForGet = '//localhost:7788/api/allSongs';
-  javaServerUrlForUpdate = '//localhost:7788/api/update';
-  javaServerUrlForDelete = '//localhost:7788/api/songs';
-  javaServerUrlForAdd = '//localhost:7788/api/new';
+  // javaServerUrlForGet = '//localhost:7788/api/allSongs';
+  // javaServerUrlForUpdate = '//localhost:7788/api/update';
+  // javaServerUrlForDelete = '//localhost:7788/api/songs';
+  // javaServerUrlForAdd = '//localhost:7788/api/new';
 
   getPlayList$: Observable<any>;
   songs: Song[];
