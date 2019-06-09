@@ -24,15 +24,21 @@ export interface Song {
   })
   export class ServiceService {
 
-  javaServerUrlForGet = '//ec2-18-208-180-155.compute-1.amazonaws.com:7788/api/allSongs';
-   javaServerUrlForUpdate = '//ec2-18-208-180-155.compute-1.amazonaws.com:7788/api/update';
-  javaServerUrlForDelete = '//ec2-18-208-180-155.compute-1.amazonaws.com:7788/api/songs';
-  javaServerUrlForAdd = '//ec2-18-208-180-155.compute-1.amazonaws.com:7788/api/new';
+  javaServerUrlForGet = '//ec2-3-17-37-15.us-east-2.compute.amazonaws.com:7788/api/allSongs';
+  javaServerUrlForUpdate = '//ec2-3-17-37-15.us-east-2.compute.amazonaws.com:7788/api/update';
+  javaServerUrlForDelete = '//ec2-3-17-37-15.us-east-2.compute.amazonaws.com:7788/api/songs';
+ javaServerUrlForAdd = '//ec2-3-17-37-15.us-east-2.compute.amazonaws.com:7788/api/new';
 
-  // javaServerUrlForGet = '//localhost:7788/api/allSongs';
-  // javaServerUrlForUpdate = '//localhost:7788/api/update';
-  // javaServerUrlForDelete = '//localhost:7788/api/songs';
-  // javaServerUrlForAdd = '//localhost:7788/api/new';
+   // javaServerUrlForGet = '//localhost:4200/api/allSongs';
+   // javaServerUrlForUpdate = '//localhost:4200/api/update';
+   // javaServerUrlForDelete = '//localhost:4200/api/songs';
+   // javaServerUrlForAdd = '//localhost:4200/api/new';
+
+
+  // javaServerUrlForGet = '//mlmsfrontend.s3-website.us-east-2.amazonaws.com:4200/api/allSongs';
+  // javaServerUrlForUpdate = '//mlmsfrontend.s3-website.us-east-2.amazonaws.com:4200/api/update';
+  // javaServerUrlForDelete = '//mlmsfrontend.s3-website.us-east-2.amazonaws.com:4200/api/songs';
+  // javaServerUrlForAdd = '//mlmsfrontend.s3-website.us-east-2.amazonaws.com:4200/api/new';
 
   getPlayList$: Observable<any>;
   songs: Song[];
